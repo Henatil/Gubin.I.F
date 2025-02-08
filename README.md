@@ -23,3 +23,28 @@ vi /etc/sudoers
 • Для установки улиты wget (wget=это утилита командной строки для загрузки файлов из интернета.)
 
 ![image](https://github.com/user-attachments/assets/00342289-0516-4526-badd-079013edec20)
+
+2. Устанавливаем `sudo yum install curl` 
+
+![image](https://github.com/user-attachments/assets/29fba53b-e0fa-4496-b027-f99d85829be6)
+
+2.1 `sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo`
+
+• Скачиваем файл репозитория
+
+![image](https://github.com/user-attachments/assets/3d9a7925-aeed-4050-890e-3abfd1fef2fb)
+
+3. `sudo yum install docker-ce docker-ce-cli containerd.io`
+
+• Устанавливаем docker
+
+![image](https://github.com/user-attachments/assets/1876c9f2-89fa-4f65-9707-1b4aee9464de)
+
+4. `sudo systemctl enable docker --now`
+
+• Запускаем его и разрешаем автозапуск
+
+![image](https://github.com/user-attachments/assets/40257b44-f7b1-49be-bb45-50ee3ca24671)
+
+
+
