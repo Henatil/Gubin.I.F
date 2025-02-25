@@ -54,6 +54,7 @@ vi /etc/sudoers
 
 • Объявление переменной COMVER, полученной в результате curl запроса, хранящей в себе номер последней
 версии Docker Compose
+
 ![image](https://github.com/user-attachments/assets/2e951858-540c-4848-a278-a1990a2fa29e)
 
 7. `sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose`                        
