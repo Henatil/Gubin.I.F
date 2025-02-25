@@ -54,13 +54,13 @@ vi /etc/sudoers
 
 • Объявление переменной COMVER, полученной в результате curl запроса, хранящей в себе номер последней
 версии Docker Compose
-![image](https://github.com/user-attachments/assets/1a319c45-0467-4354-80ae-8adb82d8ad57)
+![image](https://github.com/user-attachments/assets/2e951858-540c-4848-a278-a1990a2fa29e)
 
 7. `sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose`                        
 
 • Теперь скачиваем скрипт docker-compose последней версии, используя объявленную ранее переменную и помещаем его в каталог /usr/bin
 
-![image](https://github.com/user-attachments/assets/6f4a7ffc-ff0c-4155-a082-07d7d0efc5e5)
+![image](https://github.com/user-attachments/assets/79588f34-614e-47ea-ad35-3031981127ba)
 
 8. `sudo chmod +x /usr/bin/docker-compose`
 
@@ -70,14 +70,14 @@ vi /etc/sudoers
 
 • Проверка установленной версии Docker Compose.
 
-![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
+![image](https://github.com/user-attachments/assets/5b020289-6738-4b35-a781-198bfa8bfa6c)
 
 • Можно скачать git прямо из командной строки прописав Y
 
 10. `git clone https://github.com/skl256/grafana_stack_for_docker.git`
 
 • выдаст ошибку и предложит скачать git, согласиться и продолжить
-![image](https://github.com/user-attachments/assets/b469b556-d8b7-467c-a1d9-125487dcafd8)
+![image](https://github.com/user-attachments/assets/3c397f5e-483d-428f-8b14-e0c6e2e0b91b)
 
 11. `cd grafana_stack_for_docker`
     
@@ -94,6 +94,7 @@ vi /etc/sudoers
 14. `sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana}`
 
 • все файлы и каталоги в указанных директориях будут переданы в собственность текущему пользователю и его группе
+![image](https://github.com/user-attachments/assets/197172d2-bdd5-43aa-ab62-601a03941f88)
 
 15.` touch /mnt/common_volume/grafana/grafana-config/grafana.ini`
 
@@ -106,27 +107,58 @@ vi /etc/sudoers
 17. `mv grafana.yaml docker-compose.yaml `
 
 • команда переименовывает файл grafana.yaml в docker-compose.yaml. Ничего не покажет, но можно проверить при помощи команды ls
+![image](https://github.com/user-attachments/assets/2412d6dd-7516-4989-94fa-1b42f53a5db8)
 
 18.` sudo docker compose up -d`
 
 • команда создает и запускает контейнеры в фоновом режиме, используя конфигурацию из файла docker-compose.yml, с правами суперпользователя.
-![image](https://github.com/user-attachments/assets/a58b0533-185d-49d2-b5ae-f48ce5ec261f)
 
-![image](https://github.com/user-attachments/assets/929f2f13-f8e2-4a24-8bef-a423f785b144)
+![image](https://github.com/user-attachments/assets/946f1974-f27e-40e0-a4ca-9c430c4b7040)
 
-5. `sudo docker compose stop`
+19.` sudo vi docker-compose.yaml`
+
+•команда открывает файл docker-compose.yaml в текстовом редакторе vi с правами суперпользователя, что позволяет вам редактировать его содержимое.
+
+• Нас перекинет в текстовый редактор
+
+• Что-бы что-то изменить в тесковом редакторе нажмите insert на клавиатуре
+
+• Что бы сохранить что-то в этом документе нажимаем Esc пишем :wq! В этом текставом редакторе мы должны поставить node-exporter после services
+
+![image](https://github.com/user-attachments/assets/269213a9-6e34-4687-8d85-2d4b0c4aa453)
+
+20. `sudo docker compose stop`
+
+•Останавливает все запущенные контейнеры, но не удаляет их.
+•Контейнеры остаются в состоянии "остановленных".
+
 ![image](https://github.com/user-attachments/assets/e228f373-5aed-4965-8233-f95ba450c509)
 
-6. `sudo docker compose down`
+21. `sudo docker compose down`
+
+•Полностью останавливает и удаляет все контейнеры, сети.
+•Эта команда является более радикальной по сравнению с командой stop. После её выполнения все данные, находящиеся в хранилищах, будут уничтожены, если не будет указано иное для их сохранения.
+
 ![image](https://github.com/user-attachments/assets/e92cd705-87a7-465e-90a3-18a4277e8ecd)
 
-7. `sudo docker compose ps`
+22. `sudo docker compose ps`
+
+•Отображает статус всех контейнеров, указанных в файле. Данная команда предоставляет список контейнеров с информацией об их состоянии (активен/неактивен), портах, сетях и другими характеристиками.
+
 ![image](https://github.com/user-attachments/assets/542f9f2a-59b7-446f-8ca8-16137f59e9ac)
 
-8. `git clone [https://github.com/Henatil/Gubin.I.F.git]`
+23. `git clone [https://github.com/Henatil/Gubin.I.F.git]`
 
-Командой выполняем клонирование удаленного Git-репозитория с GitHub на компьютер
+•Команда осуществляет клонирование удаленного Git-репозитория с GitHub в указанную директорию.
+
 ![image](https://github.com/user-attachments/assets/abb749e9-103d-4139-9520-f79806e39b9a)
+
+24. `pwd`
+
+•Показывает путь
+
+![image](https://github.com/user-attachments/assets/ad9bc814-0a2a-43b8-9205-8b5e6cc8422e)
+
 
 
 
