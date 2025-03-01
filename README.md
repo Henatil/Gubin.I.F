@@ -159,9 +159,44 @@ vi /etc/sudoers
 •Показывает путь
 
 ![image](https://github.com/user-attachments/assets/ad9bc814-0a2a-43b8-9205-8b5e6cc8422e)
+gggg
 
+![image](https://github.com/user-attachments/assets/e1647f28-0b97-49fa-899c-b3027e1edb27)
+![image](https://github.com/user-attachments/assets/822f01b1-5bcd-4ca9-b07a-1e371502aa69)
 
+![image](https://github.com/user-attachments/assets/48e82af6-f0c3-4fda-ab79-828cd30bd206)
 
+![image](https://github.com/user-attachments/assets/9d8f44cf-b619-473f-94a8-30c437d7a52e)
+![image](https://github.com/user-attachments/assets/957a14d3-603c-42d1-a3ec-d45d8c3ead70)
 
+![image](https://github.com/user-attachments/assets/90ad2bc0-d1af-4e3a-b09c-0b1e09aa3c69)
+![image](https://github.com/user-attachments/assets/4e969f74-f7bc-4a63-93a0-ade9bbad0882)
 
+![image](https://github.com/user-attachments/assets/d756a378-f656-4056-adf5-79b66d6d2f41)
+![image](https://github.com/user-attachments/assets/1848e3ca-c3e4-4622-a7e6-83c52fd5710a)
+![image](https://github.com/user-attachments/assets/e2ef7480-f44e-41a0-ab87-b64d992b21d1)
+![image](https://github.com/user-attachments/assets/fea43dee-e0ea-4cbc-b9bd-6261011f3f66)
+
+## Grafana
+
+* переходим на сайт `localhost:3000`
+    * User & Password GRAFANA: `admin`
+    * Код графаны: `3000`
+    * Код прометеуса: `http://prometheus:9090`
+* в меню выбираем вкладку Dashboards и создаем Dashboard
+    * ждем кнопку +Add visualization, а после "Configure a new data source"
+    * выбираем Prometheus
+    * Connection
+    * `http://prometheus:9090`
+* Authentication
+    * Basic authentication
+        * User: `admin`
+        * Password: `admin`
+        * Нажимаем на Save & test и должно показывать зелёную галочку
+* в меню выбираем вкладку Dashboards и создаем Dashboard
+    * ждем кнопку "Import dashboard"
+    * Find and import dashboards for common applications at grafana.com/dashboards: 1860 //ждем кнопку Load
+    * Select Prometheus ждем кнопку "Import"
+
+![image](https://github.com/user-attachments/assets/d8305ac5-6f39-4418-bbf7-4e83901abf19)
 
