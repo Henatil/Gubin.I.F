@@ -95,6 +95,7 @@ vi /etc/sudoers
 14. `sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana}`
 
 • все файлы и каталоги в указанных директориях будут переданы в собственность текущему пользователю и его группе
+
 ![image](https://github.com/user-attachments/assets/197172d2-bdd5-43aa-ab62-601a03941f88)
 
 15.` touch /mnt/common_volume/grafana/grafana-config/grafana.ini`
@@ -108,6 +109,7 @@ vi /etc/sudoers
 17. `mv grafana.yaml docker-compose.yaml `
 
 • команда переименовывает файл grafana.yaml в docker-compose.yaml. Ничего не покажет, но можно проверить при помощи команды ls
+
 ![image](https://github.com/user-attachments/assets/2412d6dd-7516-4989-94fa-1b42f53a5db8)
 
 18.` sudo docker compose up -d`
@@ -174,34 +176,45 @@ vi /etc/sudoers
 ![image](https://github.com/user-attachments/assets/9d8f44cf-b619-473f-94a8-30c437d7a52e)
 ![image](https://github.com/user-attachments/assets/957a14d3-603c-42d1-a3ec-d45d8c3ead70)
 
+28. Останавливаем и удаляет все контейнеры `sudo docker compose down`
+
 ![image](https://github.com/user-attachments/assets/90ad2bc0-d1af-4e3a-b09c-0b1e09aa3c69)
+
+29. `sudo docker compose up -d`
+Поднять контейнеры Docker через команду.
+
 ![image](https://github.com/user-attachments/assets/4e969f74-f7bc-4a63-93a0-ade9bbad0882)
 
+30. Теперь останавливаем докер для того чтобы зайти в `prometeus.yaml` 
 ![image](https://github.com/user-attachments/assets/d756a378-f656-4056-adf5-79b66d6d2f41)
 ![image](https://github.com/user-attachments/assets/1848e3ca-c3e4-4622-a7e6-83c52fd5710a)
+
+31. Удаляем не нужные контейнеры
+
+ищем строчку -targets прописываем exporter:9000
 ![image](https://github.com/user-attachments/assets/e2ef7480-f44e-41a0-ab87-b64d992b21d1)
+
+32. Снога запускаем и поднимаем контейнеры, для того чтобы зайти в него через браузер.
 ![image](https://github.com/user-attachments/assets/fea43dee-e0ea-4cbc-b9bd-6261011f3f66)
 
 ## Grafana
 
 * переходим на сайт `localhost:3000`
-    * User & Password GRAFANA: `admin`
-    * Код графаны: `3000`
-    * Код прометеуса: `http://prometheus:9090`
-* в меню выбираем вкладку Dashboards и создаем Dashboard
-    * ждем кнопку +Add visualization, а после "Configure a new data source"
-    * выбираем Prometheus
-    * Connection
-    * `http://prometheus:9090`
-* Authentication
-    * Basic authentication
-        * User: `admin`
-        * Password: `admin`
-        * Нажимаем на Save & test и должно показывать зелёную галочку
-* в меню выбираем вкладку Dashboards и создаем Dashboard
-    * ждем кнопку "Import dashboard"
-    * Find and import dashboards for common applications at grafana.com/dashboards: 1860 //ждем кнопку Load
-    * Select Prometheus ждем кнопку "Import"
+User & Password GRAFANA: `admin`
+Код графаны: `3000`
+
+После того как зашли, нужно создать Dashboards. Путь где его можно создать Home -> Connections -> Data sources -> Add data source
+
+Где нужно нажать на +Add visualization -> Configure a new data source -> Prometheus
+
+Настройки:
+прометеуса: `http://prometheus:9090`
+Authentication: Basic authentication
+После того как все настроили нажимаем Save & test
+
+Cоздав Dashboards импортируем его: Путь где его можно импортировать Home -> Dashboards -> Import dashboard
+
+В поле нужно написать 1860 -> Load Select Prometheus -> Import -> Название Prometheus
 
 ![image](https://github.com/user-attachments/assets/d8305ac5-6f39-4418-bbf7-4e83901abf19)
 
