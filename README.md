@@ -159,12 +159,17 @@ vi /etc/sudoers
 •Показывает путь
 
 ![image](https://github.com/user-attachments/assets/ad9bc814-0a2a-43b8-9205-8b5e6cc8422e)
-gggg
+
+25. Делаем бэкапы
 
 ![image](https://github.com/user-attachments/assets/e1647f28-0b97-49fa-899c-b3027e1edb27)
 ![image](https://github.com/user-attachments/assets/822f01b1-5bcd-4ca9-b07a-1e371502aa69)
 
+26. `/mnt/common_volume/swarm/grafana/config/`
+ 
 ![image](https://github.com/user-attachments/assets/48e82af6-f0c3-4fda-ab79-828cd30bd206)
+
+27. Снова делаем бэкапы
 
 ![image](https://github.com/user-attachments/assets/9d8f44cf-b619-473f-94a8-30c437d7a52e)
 ![image](https://github.com/user-attachments/assets/957a14d3-603c-42d1-a3ec-d45d8c3ead70)
