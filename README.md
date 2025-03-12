@@ -185,23 +185,25 @@ vi /etc/sudoers
 
 ![image](https://github.com/user-attachments/assets/4e969f74-f7bc-4a63-93a0-ade9bbad0882)
 
-30. Теперь останавливаем докер для того чтобы зайти в `prometeus.yaml` 
+30. Теперь останавливаем докер для того чтобы зайти в `prometeus.yaml`
+
 ![image](https://github.com/user-attachments/assets/d756a378-f656-4056-adf5-79b66d6d2f41)
 ![image](https://github.com/user-attachments/assets/1848e3ca-c3e4-4622-a7e6-83c52fd5710a)
 
-31. Удаляем не нужные контейнеры
+32. Удаляем не нужные контейнеры
 
 ищем строчку -targets прописываем exporter:9000
+
 ![image](https://github.com/user-attachments/assets/e2ef7480-f44e-41a0-ab87-b64d992b21d1)
 
-32. Снога запускаем и поднимаем контейнеры, для того чтобы зайти в него через браузер.
+32. Снова запускаем и поднимаем контейнеры, для того чтобы зайти в него через браузер.
+
 ![image](https://github.com/user-attachments/assets/fea43dee-e0ea-4cbc-b9bd-6261011f3f66)
 
 ## Grafana
 
 * переходим на сайт `localhost:3000`
-User & Password GRAFANA: `admin`
-Код графаны: `3000`
+* User & Password GRAFANA: `admin`
 
 После того как зашли, нужно создать Dashboards. Путь где его можно создать Home -> Connections -> Data sources -> Add data source
 
