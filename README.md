@@ -220,3 +220,42 @@ Cоздав Dashboards импортируем его: Путь где его м�
 
 ![image](https://github.com/user-attachments/assets/d8305ac5-6f39-4418-bbf7-4e83901abf19)
 
+## VictoriaMetrics
+
+Для начала изменим docker-compose.yaml
+
+1. `cd grafana_stack_for_docker`
+
+• команда cd grafana_stack_for_docker изменяет текущий рабочий каталог на каталог grafana_stack_for_docker.
+
+2. `echo -e "# TYPE OILCOINT_metric1 gauge\nOILCOINT_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus  `
+
+• команда отправляет бинарные данные (например, метрики в формате Prometheus) на локальный сервер, который слушает на порту 8428.
+
+3. `http://localhost:8428` 
+Заходим на сайт пароль не запрашивает, значит в Authentication оставляем No Authentication
+
+![image](https://github.com/user-attachments/assets/20e86599-b23c-42ae-a3a6-620face2e397)
+
+![image](https://github.com/user-attachments/assets/6c2d9c06-eab1-4706-a8be-944230106ecb)
+
+Захом в Dashboards --> new --> new Dashboard --> add visualization справа внизу ищем Configure a new data source. Выбераем Prometheus 
+там где мы писали http//:prometheus:9090 пишем http//:victoriametrics:8428 И заменяем имя из "Prometheus-2" в любое другое связаное с victoriametrics
+нажимаем на dashboards add visualition выбираем то что создали
+снизу меняем на "code"
+Переходим в терминал и пишем: light_metric1
+
+4. Теперь в терминале nOILCOINT_metric1 0 меняем 0 на любое число до 1000
+   
+![image](https://github.com/user-attachments/assets/c6f918b9-2f53-462e-be5f-72a35fbda3ac)
+
+5. теперь видим что у нас меняеться значение которые мы указали
+
+![image](https://github.com/user-attachments/assets/35ee4203-5e1d-4a5c-ada4-4508989d5bf3)
+
+6. справа сверху ищем поисковую строчку и пишем Connect null values --> always
+Она соедит наши значение
+
+![image](https://github.com/user-attachments/assets/222fce93-b3d2-4593-b128-53682b0627f9)
+
+
