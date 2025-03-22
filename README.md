@@ -258,4 +258,6 @@ Cоздав Dashboards импортируем его: Путь где его м�
 
 ![image](https://github.com/user-attachments/assets/222fce93-b3d2-4593-b128-53682b0627f9)
 
+![image](https://github.com/user-attachments/assets/23fded42-1caf-480f-8a92-8afa5f9991c8)
+
 
